@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".activity.MovieDetailActivity">
+    tools:context=".activity.TvDetailActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -143,5 +143,6 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </ScrollView>

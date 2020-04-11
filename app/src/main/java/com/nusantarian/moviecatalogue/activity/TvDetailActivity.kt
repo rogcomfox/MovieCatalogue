@@ -1,23 +1,22 @@
 package com.nusantarian.moviecatalogue.activity
 
-import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
 import com.nusantarian.moviecatalogue.R
-import com.nusantarian.moviecatalogue.databinding.ActivityMovieDetailBinding
+import com.nusantarian.moviecatalogue.databinding.ActivityTvDetailBinding
 import com.nusantarian.moviecatalogue.model.Movie
 import com.squareup.picasso.Picasso
 
+class TvDetailActivity : AppCompatActivity() {
 
-class MovieDetailActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityMovieDetailBinding
+    private lateinit var binding: ActivityTvDetailBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMovieDetailBinding.inflate(layoutInflater)
+        binding = ActivityTvDetailBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-        supportActionBar?.setTitle(R.string.movie_detail)
+        supportActionBar?.setTitle(R.string.tv_detail)
         supportActionBar?.setDisplayShowHomeEnabled(true)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
@@ -26,7 +25,7 @@ class MovieDetailActivity : AppCompatActivity() {
 
     private fun setData(){
         val intent = intent
-        val movieParcel = intent.getParcelableExtra("Movies List") as Movie
+        val movieParcel = intent.getParcelableExtra("Tv List") as Movie
         val resPoster = movieParcel.poster
         val resTitle = movieParcel.title
         val resGenre = movieParcel.genre

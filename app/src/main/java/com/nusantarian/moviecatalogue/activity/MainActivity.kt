@@ -1,67 +1,49 @@
 package com.nusantarian.moviecatalogue.activity
 
 import android.content.Intent
-import android.content.res.TypedArray
 import android.os.Bundle
 import android.os.Handler
-import android.view.View
-import android.widget.AdapterView
+import android.provider.Settings
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentTransaction
+import androidx.viewpager.widget.PagerAdapter
 import com.nusantarian.moviecatalogue.R
-import com.nusantarian.moviecatalogue.adapter.MovieAdapter
+import com.nusantarian.moviecatalogue.adapter.SectionsPagerAdapter
 import com.nusantarian.moviecatalogue.databinding.ActivityMainBinding
-import com.nusantarian.moviecatalogue.model.Movie
+import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
+class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private var back = false
-    private lateinit var movieAdapter: MovieAdapter
-    private lateinit var resName: Array<String>
-    private lateinit var resGenre: Array<String>
-    private lateinit var resRating: Array<String>
-    private lateinit var resDesc: Array<String>
-    private lateinit var resPoster: TypedArray
-    private var movies = arrayListOf<Movie>()
+    private lateinit var fm: FragmentTransaction
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-        setSupportActionBar(binding.toolbar)
-        supportActionBar?.setTitle(R.string.app_name)
+        val adapter = SectionsPagerAdapter(this, supportFragmentManager)
+        view_pager.adapter = adapter
+        binding.tabs.setupWithViewPager(view_pager)
 
-        movieAdapter = MovieAdapter(this)
-        binding.listView.adapter = movieAdapter
-
-        initData()
-        addItem()
-
-        binding.listView.onItemClickListener = this
+        supportActionBar?.elevation = 0F
     }
 
-    private fun initData() {
-        resName = resources.getStringArray(R.array.res_name)
-        resGenre = resources.getStringArray(R.array.res_genre)
-        resRating = resources.getStringArray(R.array.res_rating)
-        resPoster = resources.obtainTypedArray(R.array.res_photo)
-        resDesc = resources.getStringArray(R.array.res_desc)
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return super.onCreateOptionsMenu(menu)
     }
 
-    private fun addItem() {
-        for (i in resName.indices) {
-            val movie = Movie(
-                resPoster.getResourceId(i, -1),
-                resName[i],
-                resGenre[i],
-                resRating[i],
-                resDesc[i]
-            )
-            movies.add(movie)
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.nav_language){
+            val intent = Intent(Settings.ACTION_LOCALE_SETTINGS)
+            startActivity(intent)
         }
-        movieAdapter.movies = movies
+        return super.onOptionsItemSelected(item)
     }
 
     override fun onBackPressed() {
@@ -77,10 +59,4 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
         }, 2000)
     }
 
-    override fun onItemClick(parent: AdapterView<*>, view: View, position: Int, id: Long) {
-        val intent = Intent(this, MovieDetailActivity::class.java)
-        intent.putExtra("Movies List", movies[position])
-        startActivity(intent)
-        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
-    }
 }
