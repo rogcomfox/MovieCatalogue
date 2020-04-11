@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup">
-        <activity android:name=".activity.TvDetailActivity"></activity>
+        <activity android:name=".activity.TvDetailActivity"/>
         <activity android:name=".activity.MovieDetailActivity" />
         <activity android:name=".activity.SplashActivity">
             <intent-filter>
