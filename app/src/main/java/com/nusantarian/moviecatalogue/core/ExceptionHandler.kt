@@ -8,7 +8,7 @@ fun <T> retrofitErrorHandler(res: Response<T>): T {
         return res.body()!!
     } else {
         val errMsg = res.errorBody()?.string()?.let {
-            JSONObject(it).getString("message") // or whatever your message is
+            JSONObject(it).getString("status_message") // get error message
         } ?: run {
             res.code().toString()
         }
