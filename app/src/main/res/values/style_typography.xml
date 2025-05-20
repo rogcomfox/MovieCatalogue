@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--font bold styles-->
+    <style name="FontH1_Bold" parent="">
+        <item name="fontFamily">@font/roboto_bold</item>
+        <item name="android:textSize">40sp</item>
+        <item name="android:lineSpacingExtra">6.9sp</item>
+    </style>
+
+    <style name="FontH2_Bold" parent="">
+        <item name="fontFamily">@font/roboto_bold</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:lineSpacingExtra">5.5sp</item>
+    </style>
+
+    <style name="FontH3_Bold" parent="">
+        <item name="fontFamily">@font/roboto_bold</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:lineSpacingExtra">4.1sp</item>
+    </style>
+
+    <style name="BodyLarge_Bold" parent="">
+        <item name="fontFamily">@font/roboto_bold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:lineSpacingExtra">3.4sp</item>
+    </style>
+
+    <style name="Body_Bold" parent="">
+        <item name="fontFamily">@font/roboto_bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingExtra">2.8sp</item>
+    </style>
+
+    <style name="BodySmall_Bold" parent="">
+        <item name="fontFamily">@font/roboto_bold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">2.4sp</item>
+    </style>
+
+    <style name="FootNote_Bold" parent="">
+        <item name="fontFamily">@font/roboto_bold</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineSpacingExtra">2.1sp</item>
+    </style>
+
+    <style name="Legal_Bold" parent="">
+        <item name="fontFamily">@font/roboto_bold</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:lineSpacingExtra">1.7sp</item>
+    </style>
+
+
+    <!--font semibold styles-->
+    <style name="FontH1_SemiBold" parent="">
+        <item name="fontFamily">@font/roboto_semibold</item>
+        <item name="android:textSize">40sp</item>
+        <item name="android:lineSpacingExtra">6.9sp</item>
+    </style>
+
+    <style name="FontH2_SemiBold" parent="">
+        <item name="fontFamily">@font/roboto_semibold</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:lineSpacingExtra">5.5sp</item>
+    </style>
+
+    <style name="FontH3_SemiBold" parent="">
+        <item name="fontFamily">@font/roboto_semibold</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:lineSpacingExtra">4.1sp</item>
+    </style>
+
+    <style name="BodyLarge_SemiBold" parent="">
+        <item name="fontFamily">@font/roboto_semibold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:lineSpacingExtra">3.4sp</item>
+    </style>
+
+    <style name="Body_SemiBold" parent="">
+        <item name="fontFamily">@font/roboto_semibold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingExtra">2.8sp</item>
+    </style>
+
+    <style name="BodySmall_SemiBold" parent="">
+        <item name="fontFamily">@font/roboto_semibold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">2.4sp</item>
+    </style>
+
+    <style name="FootNote_SemiBold" parent="">
+        <item name="fontFamily">@font/roboto_semibold</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineSpacingExtra">2.1sp</item>
+    </style>
+
+    <style name="Legal_SemiBold" parent="">
+        <item name="fontFamily">@font/roboto_semibold</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:lineSpacingExtra">1.7sp</item>
+    </style>
+
+
+    <!--font medium styles -->
+    <style name="FontH1_Med" parent="">
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">40sp</item>
+        <item name="android:lineSpacingExtra">6.9sp</item>
+    </style>
+
+    <style name="FontH2_Med" parent="">
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:lineSpacingExtra">5.5sp</item>
+    </style>
+
+    <style name="FontH3_Med" parent="">
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:lineSpacingExtra">4.1sp</item>
+    </style>
+
+    <style name="BodyLarge_Med" parent="">
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:lineSpacingExtra">3.4sp</item>
+    </style>
+
+    <style name="Body_Med" parent="">
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingExtra">2.8sp</item>
+    </style>
+
+    <style name="BodySmall_Med" parent="">
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">2.4sp</item>
+    </style>
+
+    <style name="FootNote_Med" parent="">
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineSpacingExtra">2.1sp</item>
+    </style>
+
+    <style name="Legal_Med" parent="">
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:lineSpacingExtra">1.7sp</item>
+    </style>
+
+
+    <!--font regular styles -->
+    <style name="FontH1_Reg" parent="">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:textSize">40sp</item>
+        <item name="android:lineSpacingExtra">6.9sp</item>
+    </style>
+
+    <style name="FontH2_Reg" parent="">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:lineSpacingExtra">5.5sp</item>
+    </style>
+
+    <style name="FontH3_Reg" parent="">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:lineSpacingExtra">4.1sp</item>
+    </style>
+
+    <style name="BodyLarge_Reg" parent="">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:lineSpacingExtra">3.4sp</item>
+    </style>
+
+    <style name="Body_Reg" parent="">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingExtra">2.8sp</item>
+    </style>
+
+    <style name="BodySmall_Reg" parent="">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">2.4sp</item>
+    </style>
+
+    <style name="FootNote_Reg" parent="">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineSpacingExtra">2.1sp</item>
+    </style>
+
+    <style name="Legal_Reg" parent="">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:lineSpacingExtra">1.7sp</item>
+    </style>
+
+</resources>

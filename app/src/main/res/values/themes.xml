@@ -1,0 +1,23 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MovieCatalogue" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primary_blue_500</item>
+        <item name="colorPrimaryVariant">@color/primary_blue_300</item>
+        <item name="colorOnPrimary">@color/grey_0</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/primary_purple_500</item>
+        <item name="colorSecondaryVariant">@color/primary_purple_300</item>
+        <item name="colorOnSecondary">@color/grey_900</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/grey_10</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <!--background-->
+        <item name="android:windowBackground">@color/grey_10</item>
+        <!--toolbar style-->
+        <item name="toolbarStyle">@style/ToolbarStyleDefault</item>
+    </style>
+
+    <style name="Theme.MovieCatalogue" parent="Base.Theme.MovieCatalogue" />
+
+</resources>

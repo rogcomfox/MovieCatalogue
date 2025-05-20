@@ -4,30 +4,30 @@
     package="com.nusantarian.moviecatalogue">
 
     <application
+        android:name=".App"
         android:allowBackup="true"
-        android:hardwareAccelerated="true"
-        android:icon="@mipmap/ic_launcher"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/img_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/img_logo"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        tools:ignore="AllowBackup">
-        <activity android:name=".activity.TvDetailActivity"/>
-        <activity android:name=".activity.MovieDetailActivity" />
-        <activity android:name=".activity.SplashActivity" android:exported="true">
+        android:theme="@style/Theme.MovieCatalogue"
+        tools:targetApi="31">
+        <activity android:name=".presentation.ui.activity.TvDetailActivity"/>
+        <activity android:name=".presentation.ui.activity.MovieDetailActivity" />
+        <activity
+            android:name=".presentation.ui.activity.LauncherActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.MainActivity" android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity
+            android:name=".presentation.ui.activity.MainActivity"
+            android:exported="true" />
 
         <meta-data
             android:name="preloaded_fonts"

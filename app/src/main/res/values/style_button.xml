@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="DefaultNormalButton" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundColor">@color/primary_blue_500</item>
+        <item name="android:textColor">@color/grey_10</item>
+        <item name="android:textAppearance">@style/Body_Reg</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:paddingTop">13dp</item>
+        <item name="android:paddingBottom">13dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="cornerRadius">10dp</item>
+        <item name="iconTint">@color/grey_30</item>
+        <item name="iconGravity">textStart</item>
+        <item name="iconPadding">6dp</item>
+        <item name="iconSize">16dp</item>
+    </style>
+
+    <style name="DefaultOutlineButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textAppearance">@style/Body_Reg</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:textColor">@color/grey_900</item>
+        <item name="android:paddingTop">13dp</item>
+        <item name="android:paddingBottom">13dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="strokeColor">@color/primary_blue_500</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="cornerRadius">10dp</item>
+    </style>
+</resources>

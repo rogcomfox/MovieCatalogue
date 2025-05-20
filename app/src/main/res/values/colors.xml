@@ -1,6 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <!--primary blue color-->
+    <color name="primary_blue_50">#e8edfa</color>
+    <color name="primary_blue_100">#b7c6f0</color>
+    <color name="primary_blue_200">#94abe8</color>
+    <color name="primary_blue_300">#6384de</color>
+    <color name="primary_blue_400">#456dd8</color>
+    <color name="primary_blue_500">#1648ce</color>
+    <color name="primary_blue_600">#1442bb</color>
+    <color name="primary_blue_700">#103392</color>
+    <color name="primary_blue_800">#0c2871</color>
+    <color name="primary_blue_900">#091e57</color>
+
+    <!--primary purple color-->
+    <color name="primary_purple_50">#f3ecf9</color>
+    <color name="primary_purple_100">#d9c5ec</color>
+    <color name="primary_purple_200">#c6a9e3</color>
+    <color name="primary_purple_300">#ad81d7</color>
+    <color name="primary_purple_400">#9d69cf</color>
+    <color name="primary_purple_500">#8443c3</color>
+    <color name="primary_purple_600">#783db1</color>
+    <color name="primary_purple_700">#5e308a</color>
+    <color name="primary_purple_800">#49256b</color>
+    <color name="primary_purple_900">#371c52</color>
+
+    <!--secondary grey color-->
+    <color name="grey_0">#ffffff</color>
+    <color name="grey_10">#fbfbfb</color>
+    <color name="grey_20">#f6f6f6</color>
+    <color name="grey_30">#ededed</color>
+    <color name="grey_40">#e2e2e2</color>
+    <color name="grey_50">#c8c8c8</color>
+    <color name="grey_60">#bababa</color>
+    <color name="grey_70">#afafaf</color>
+    <color name="grey_80">#a2a2a2</color>
+    <color name="grey_90">#959595</color>
+    <color name="grey_100">#888888</color>
+    <color name="grey_200">#7a7a7a</color>
+    <color name="grey_300">#6d6d6d</color>
+    <color name="grey_400">#626262</color>
+    <color name="grey_500">#555555</color>
+    <color name="grey_600">#4a4a4a</color>
+    <color name="grey_700">#3a3a3a</color>
+    <color name="grey_800">#2d2d2d</color>
+    <color name="grey_900">#222222</color>
+
+    <!--action green color-->
+    <color name="action_green_50">#edf7ea</color>
+    <color name="action_green_100">#c6e7be</color>
+    <color name="action_green_200">#aadc9f</color>
+    <color name="action_green_300">#83cb73</color>
+    <color name="action_green_400">#6bc158</color>
+    <color name="action_green_500">#46b22e</color>
+    <color name="action_green_600">#40a22a</color>
+    <color name="action_green_700">#327e21</color>
+    <color name="action_green_800">#276219</color>
+    <color name="action_green_900">#1d4b13</color>
+
+    <!--action blue color-->
+    <color name="action_blue_50">#e6f4fa</color>
+    <color name="action_blue_100">#b1dcf0</color>
+    <color name="action_blue_200">#8bcbe8</color>
+    <color name="action_blue_300">#55b3de</color>
+    <color name="action_blue_400">#35a4d8</color>
+    <color name="action_blue_500">#028dce</color>
+    <color name="action_blue_600">#0280bb</color>
+    <color name="action_blue_700">#016492</color>
+    <color name="action_blue_800">#014e71</color>
+    <color name="action_blue_900">#013b57</color>
+
+    <!--action yellow color-->
+    <color name="yellow_50">#fff5e6</color>
+    <color name="yellow_100">#fedfb0</color>
+    <color name="yellow_200">#fecf8a</color>
+    <color name="yellow_300">#fdb954</color>
+    <color name="yellow_400">#fdac33</color>
+    <color name="yellow_500">#fc9700</color>
+    <color name="yellow_600">#e58900</color>
+    <color name="yellow_700">#b36b00</color>
+    <color name="yellow_800">#8b5300</color>
+    <color name="yellow_900">#6a3f00</color>
+
+    <!--action red color-->
+    <color name="red_50">#fbebeb</color>
+    <color name="red_100">#f4bfbf</color>
+    <color name="red_200">#eea1a1</color>
+    <color name="red_300">#e77676</color>
+    <color name="red_400">#e25b5b</color>
+    <color name="red_500">#db3232</color>
+    <color name="red_600">#c72e2e</color>
+    <color name="red_700">#9b2424</color>
+    <color name="red_800">#781c1c</color>
+    <color name="red_900">#5c1515</color>
+
+    <!--misc color-->
+    <color name="gradient_primary_blue_50">#8c1648ce</color>
+    <color name="gradient_primary_blue_80">#cc1648ce</color>
+    <color name="gradient_primary_purple_50">#8c8443c3</color>
+    <color name="gradient_primary_purple_80">#cc8443c3</color>
+    <color name="grey_scan_page">#3c4049</color>
+    <color name="grey_20_opacity">#33222222</color>
 </resources>

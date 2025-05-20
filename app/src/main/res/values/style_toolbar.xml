@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ToolbarStyleDefault" parent="Widget.MaterialComponents.Toolbar">
+        <item name="android:background">@color/grey_10</item>
+        <item name="titleTextAppearance">@style/BodyLarge_Med</item>
+        <item name="titleTextColor">@color/grey_900</item>
+        <item name="elevation">0dp</item>
+        <item name="titleCentered">true</item>
+        <item name="layout_scrollFlags">scroll|enterAlways</item>
+    </style>
+</resources>
