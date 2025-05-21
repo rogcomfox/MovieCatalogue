@@ -1,11 +1,8 @@
 package com.nusantarian.moviecatalogue.core.source.local.entity
 
-import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
-import com.nusantarian.moviecatalogue.core.source.local.database.Constant
 
-@Entity(tableName = Constant.FAV_TABLE)
 data class MovieDetailEntity(
     val adult: Boolean,
     @SerializedName("backdrop_path") val backDropPath: String,

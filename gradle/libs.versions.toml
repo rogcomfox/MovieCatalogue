@@ -1,6 +1,7 @@
 [versions]
 agp = "8.10.0"
 coreSplashscreen = "1.0.1"
+pagingRuntimeKtx = "3.3.6"
 coil = "3.1.0"
 kotlin = "2.1.20"
 ksp = "2.1.20-1.0.31"
@@ -26,6 +27,7 @@ roomRuntime = "2.7.1"
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-core-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "coreSplashscreen" }
+androidx-paging-runtime-ktx = { module = "androidx.paging:paging-runtime-ktx", version.ref = "pagingRuntimeKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -52,6 +54,7 @@ android-image-slider = { module = "com.github.smarteist:Android-Image-Slider", v
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomRuntime" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomRuntime" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
+androidx-room-paging = {module = "androidx.room:room-paging", version.ref = "roomRuntime"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

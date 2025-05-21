@@ -85,7 +85,7 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.activity)
-    annotationProcessor(libs.androidx.lifecycle.compiler)
+    ksp(libs.androidx.lifecycle.compiler)
 
     // koin
     implementation(libs.koin.core)
@@ -100,6 +100,7 @@ dependencies {
     // room
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
+    implementation(libs.androidx.room.paging)
     ksp(libs.androidx.room.compiler)
 
     // coroutine
@@ -111,6 +112,9 @@ dependencies {
 
     // image carousel
     implementation(libs.android.image.slider)
+
+    // paging
+    implementation(libs.androidx.paging.runtime.ktx)
 
     // test unit
     testImplementation(libs.junit)
