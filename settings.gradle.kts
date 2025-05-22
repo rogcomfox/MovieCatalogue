@@ -24,3 +24,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "MovieCatalogue"
 include(":app")
+include(":dynamicfeature")

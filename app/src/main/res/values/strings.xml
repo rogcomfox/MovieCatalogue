@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">MovieCatalogue</string>
     <string name="tv_app_version">Version %1$s</string>
+    <string name="tv_module_favourite_movie">FavouriteMovie</string>
 </resources>
