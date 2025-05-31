@@ -14,4 +14,7 @@ interface FavMovieDao {
 
     @Query("SELECT * FROM ${Constant.FAV_TABLE}")
     fun getAllFavMovies()
+
+    @Query("DELETE FROM ${Constant.FAV_TABLE} WHERE id= :movieId")
+    suspend fun deleteAllFavMovies(movieId: String)
 }

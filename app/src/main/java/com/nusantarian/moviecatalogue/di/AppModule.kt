@@ -1,5 +1,10 @@
 package com.nusantarian.moviecatalogue.di
 
+import android.content.Context
+import androidx.room.Room
+import com.nusantarian.moviecatalogue.core.source.local.dao.FavMovieDao
+import com.nusantarian.moviecatalogue.core.source.local.database.AppDatabase
+import com.nusantarian.moviecatalogue.core.source.local.database.Constant
 import com.nusantarian.moviecatalogue.core.source.local.database.LocalPrefManager
 import com.nusantarian.moviecatalogue.core.source.remote.network.ApiService
 import com.nusantarian.moviecatalogue.core.source.remote.network.AuthInterceptor
@@ -13,8 +18,21 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.scalars.ScalarsConverterFactory
 import java.util.concurrent.TimeUnit
 
+fun provideRoomDatabase(context: Context): AppDatabase {
+    var database: AppDatabase? = null
+    database = Room.databaseBuilder(context, AppDatabase::class.java, Constant.MAIN_DB).build()
+    return database
+}
+
+fun provideFavMovieDao(appDatabase: AppDatabase): FavMovieDao = appDatabase.favMovieDao()
+
 val localModule = module {
     singleOf(::LocalPrefManager)
+}
+
+val databaseModule = module {
+    singleOf(::provideRoomDatabase)
+    singleOf(::provideFavMovieDao)
 }
 
 val networkModule = module {
@@ -38,5 +56,5 @@ val networkModule = module {
 }
 
 val appModule = module{
-    includes(localModule)
+    includes(localModule, databaseModule, networkModule)
 }
