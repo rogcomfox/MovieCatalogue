@@ -1,9 +1,9 @@
 package com.rogcomfox.core.di
 
+import com.rogcomfox.core.BuildConfig
 import com.rogcomfox.core.source.local.database.LocalPrefManager
 import com.rogcomfox.core.source.remote.network.ApiService
 import com.rogcomfox.core.source.remote.network.AuthInterceptor
-import com.rogcomfox.core.source.remote.network.Routing
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.core.module.dsl.singleOf
@@ -33,15 +33,29 @@ val databaseModule = module {
 val networkModule = module {
     single {
         OkHttpClient.Builder()
-            .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
-            .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.HEADERS))
+            .addInterceptor(
+                HttpLoggingInterceptor().setLevel(
+                    if (BuildConfig.DEBUG)
+                        HttpLoggingInterceptor.Level.BODY
+                    else
+                        HttpLoggingInterceptor.Level.NONE
+                )
+            )
+            .addInterceptor(
+                HttpLoggingInterceptor().setLevel(
+                    if (BuildConfig.DEBUG)
+                        HttpLoggingInterceptor.Level.HEADERS
+                    else
+                        HttpLoggingInterceptor.Level.NONE
+                )
+            )
             .addInterceptor(AuthInterceptor())
             .connectTimeout(30, TimeUnit.SECONDS)
             .readTimeout(30, TimeUnit.SECONDS)
             .build()
     }
     single {
-        val retrofit = Retrofit.Builder().baseUrl(Routing.MAIN_URL)
+        val retrofit = Retrofit.Builder().baseUrl(BuildConfig.MAIN_BASE_URL)
             .addConverterFactory(ScalarsConverterFactory.create())
             .addConverterFactory(GsonConverterFactory.create())
             .client(get())

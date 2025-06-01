@@ -40,6 +40,19 @@ interface ApiService {
         @Path("movie_id") movieId: Int
     ): Response<MovieDetailEntity>
 
+    @Headers(
+        "isAuthorize: true",
+        "Accept: application/json"
+    )
+    @GET(Routing.SEARCH_MOVIES_URL)
+    suspend fun searchMovies(
+        @Query("query") movieQuery: String,
+        @Query("include_adult") isAdultToo: Boolean,
+        @Query("page") moviePage: Int,
+        @Query("year") movieYear: String
+    ): Response<MovieResponseWithoutDate>
+
+
     // TV Series API
     @Headers(
         "isAuthorize: true",
@@ -67,4 +80,16 @@ interface ApiService {
     suspend fun getDetailTvSeries(
         @Path("series_id") seriesId: Int
     ): Response<TvSeriesDetailEntity>
+
+    @Headers(
+        "isAuthorize: true",
+        "Accept: application/json"
+    )
+    @GET(Routing.SEARCH_TV_SERIES_URL)
+    suspend fun searchTvSeries(
+        @Query("query") tvQuery: String,
+        @Query("include_adult") isAdultToo: Boolean,
+        @Query("page") moviePage: Int,
+        @Query("year") movieYear: String
+    ): Response<TvSeriesListResponse>
 }

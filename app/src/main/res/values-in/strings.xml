@@ -3,4 +3,8 @@
     <string name="app_name">MovieCatalogue</string>
     <string name="tv_app_version">Versi %1$s</string>
     <string name="tv_module_favourite_movie">FilmFavorit</string>
+    <string name="ic_search_data">Cari Data</string>
+    <string name="ic_movies">Film</string>
+    <string name="ic_tv_series">Serial Tv</string>
+    <string name="ic_settings">Pengaturan</string>
 </resources>

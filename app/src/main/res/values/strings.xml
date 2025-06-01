@@ -2,4 +2,10 @@
     <string name="app_name">MovieCatalogue</string>
     <string name="tv_app_version">Version %1$s</string>
     <string name="tv_module_favourite_movie">FavouriteMovie</string>
+    <string name="ic_search_data">Search Data</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="ic_movies">Movies</string>
+    <string name="ic_tv_series">Tv Series</string>
+    <string name="ic_settings">Settings</string>
 </resources>

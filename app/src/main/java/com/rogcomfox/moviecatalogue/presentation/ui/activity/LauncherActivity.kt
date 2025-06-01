@@ -19,11 +19,12 @@ import com.rogcomfox.core.source.local.database.Constant
 import com.rogcomfox.core.source.local.database.LocalPrefManager
 import com.rogcomfox.moviecatalogue.databinding.ActivityLauncherBinding
 import com.rogcomfox.moviecatalogue.util.setAppLocale
+import org.koin.android.ext.android.inject
 
 class LauncherActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLauncherBinding
-    private lateinit var prefManager: LocalPrefManager
+    private val prefManager: LocalPrefManager by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
