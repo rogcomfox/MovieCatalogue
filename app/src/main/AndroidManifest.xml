@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.nusantarian.moviecatalogue">
+    package="com.rogcomfox.moviecatalogue">
 
     <application
         android:name=".App"
@@ -14,10 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MovieCatalogue"
         tools:targetApi="31">
-        <activity android:name=".presentation.ui.activity.TvDetailActivity"/>
-        <activity android:name=".presentation.ui.activity.MovieDetailActivity" />
         <activity
-            android:name=".presentation.ui.activity.LauncherActivity"
+            android:name="com.rogcomfox.moviecatalogue.presentation.ui.activity.LauncherActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".presentation.ui.activity.MainActivity"
+            android:name="com.rogcomfox.moviecatalogue.presentation.ui.activity.MainActivity"
             android:exported="true" />
 
         <meta-data

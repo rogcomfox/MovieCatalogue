@@ -1,10 +1,7 @@
-import java.util.Properties
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.navigation.safeargs)
-    alias(libs.plugins.kotlin.ksp)
     alias(libs.plugins.kotlin.parcelize)
 }
 
@@ -31,21 +28,17 @@ val versionCodeGradle: Int
         return versionMajor * 10000 + versionMinor * 100 + versionPatch
     }
 android {
-    namespace = "com.nusantarian.moviecatalogue"
+    namespace = "com.rogcomfox.moviecatalogue"
     compileSdk = curSdk
 
     defaultConfig {
-        applicationId = "com.nusantarian.moviecatalogue"
+        applicationId = "com.rogcomfox.moviecatalogue"
         minSdk = minimumSdk
         targetSdk = curSdk
         versionCode = versionCodeGradle
         versionName = versionNameGradle
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-
-        val properties = Properties()
-        properties.load(project.rootProject.file("local.properties").inputStream())
-        buildConfigField("String", "TMDB_TOKEN_ID", properties.getProperty("TMDB_TOKEN_ID"))
     }
 
     buildTypes {
@@ -72,6 +65,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":core"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -82,27 +76,9 @@ dependencies {
     implementation(libs.androidx.swiperefreshlayout)
     implementation(libs.androidx.core.splashscreen)
 
-    // lifecycle
-    implementation(libs.androidx.lifecycle.viewmodel.ktx)
-    implementation(libs.androidx.lifecycle.livedata.ktx)
-    implementation(libs.androidx.activity)
-    ksp(libs.androidx.lifecycle.compiler)
-
     // koin
     implementation(libs.koin.core)
     implementation(libs.koin.android)
-
-    // retrofit
-    implementation(libs.retrofit)
-    implementation(libs.converter.gson)
-    implementation(libs.converter.scalars)
-    implementation(libs.logging.interceptor)
-
-    // room
-    implementation(libs.androidx.room.runtime)
-    implementation(libs.androidx.room.ktx)
-    implementation(libs.androidx.room.paging)
-    ksp(libs.androidx.room.compiler)
 
     // coroutine
     implementation(libs.kotlinx.coroutines.android)
