@@ -1,6 +1,8 @@
 package com.rogcomfox.core.di
 
 import com.rogcomfox.core.BuildConfig
+import com.rogcomfox.core.repo.MoviesRepo
+import com.rogcomfox.core.repo.TvSeriesRepo
 import com.rogcomfox.core.source.local.database.LocalPrefManager
 import com.rogcomfox.core.source.remote.network.ApiService
 import com.rogcomfox.core.source.remote.network.AuthInterceptor
@@ -23,6 +25,11 @@ import java.util.concurrent.TimeUnit
 
 val localModule = module {
     singleOf(::LocalPrefManager)
+}
+
+val repoModule = module {
+    singleOf(::MoviesRepo)
+    singleOf(::TvSeriesRepo)
 }
 
 val databaseModule = module {
@@ -65,5 +72,5 @@ val networkModule = module {
 }
 
 val appModule = module{
-    includes(localModule, databaseModule, networkModule)
+    includes(localModule, databaseModule, networkModule, repoModule)
 }

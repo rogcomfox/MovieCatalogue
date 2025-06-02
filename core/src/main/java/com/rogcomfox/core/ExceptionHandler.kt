@@ -1,18 +1,22 @@
 package com.rogcomfox.core
 
-import org.json.JSONObject
+import com.rogcomfox.core.source.Resource
 import retrofit2.Response
 
-fun <T> retrofitErrorHandler(res: Response<T>): T {
-    if (res.isSuccessful) {
-        return res.body()!!
-    } else {
-        val errMsg = res.errorBody()?.string()?.let {
-            JSONObject(it).getString("status_message") // get error message
-        } ?: run {
-            res.code().toString()
+suspend fun <T> safeApiCall(apiCall: suspend () -> Response<T>): Resource<T> {
+    try {
+        val response = apiCall()
+        if (response.isSuccessful) {
+            val body = response.body()
+            body?.let {
+                return Resource.Success(body)
+            }
         }
-
-        throw Exception(errMsg)
+        return error("${response.code()} ${response.message()}")
+    } catch (e: Exception) {
+        return error(e.message ?: e.toString())
     }
 }
+
+private fun <T> error(errorMessage: String): Resource<T> =
+    Resource.Error("Api call failed --> $errorMessage")

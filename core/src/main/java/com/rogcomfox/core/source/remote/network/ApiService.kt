@@ -87,9 +87,9 @@ interface ApiService {
     )
     @GET(Routing.SEARCH_TV_SERIES_URL)
     suspend fun searchTvSeries(
-        @Query("query") tvQuery: String,
+        @Query("query") seriesQuery: String,
         @Query("include_adult") isAdultToo: Boolean,
-        @Query("page") moviePage: Int,
-        @Query("year") movieYear: String
+        @Query("page") seriesPage: Int,
+        @Query("year") seriesYear: Int
     ): Response<TvSeriesListResponse>
 }
