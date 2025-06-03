@@ -7,4 +7,5 @@
     <string name="ic_movies">Film</string>
     <string name="ic_tv_series">Serial Tv</string>
     <string name="ic_settings">Pengaturan</string>
+    <string name="text_press_back_again">Tekan lagi untuk keluar</string>
 </resources>

@@ -12,6 +12,7 @@ import android.view.WindowInsets
 import android.view.WindowInsetsController
 import android.view.WindowManager
 import androidx.activity.enableEdgeToEdge
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.rogcomfox.moviecatalogue.R
@@ -28,6 +29,7 @@ class LauncherActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        installSplashScreen()
         enableEdgeToEdge()
         binding = ActivityLauncherBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -39,7 +41,7 @@ class LauncherActivity : AppCompatActivity() {
 
         // get app version
         val info = packageManager.getPackageInfo(packageName, 0)
-        binding.tvAppName.text = resources.getString(R.string.tv_app_version, info.versionName)
+        binding.tvAppVersion.text = resources.getString(R.string.tv_app_version, info.versionName)
 
         makeFullScreen()
     }
@@ -72,7 +74,7 @@ class LauncherActivity : AppCompatActivity() {
         Handler(Looper.myLooper()!!).postDelayed({
             startActivity(Intent(this, MainActivity::class.java))
             finish()
-        }, 3000)
+        }, 2000)
     }
 
     override fun onPause() {
