@@ -6,6 +6,8 @@ import com.rogcomfox.core.repo.TvSeriesRepo
 import com.rogcomfox.core.source.local.database.LocalPrefManager
 import com.rogcomfox.core.source.remote.network.ApiService
 import com.rogcomfox.core.source.remote.network.AuthInterceptor
+import com.rogcomfox.core.viewmodel.MovieViewModel
+import com.rogcomfox.core.viewmodel.TvSeriesViewModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.core.module.dsl.singleOf
@@ -30,6 +32,11 @@ val localModule = module {
 val repoModule = module {
     singleOf(::MoviesRepo)
     singleOf(::TvSeriesRepo)
+}
+
+val viewModelModule = module {
+    singleOf(::MovieViewModel)
+    singleOf(::TvSeriesViewModel)
 }
 
 val databaseModule = module {
@@ -72,5 +79,5 @@ val networkModule = module {
 }
 
 val appModule = module{
-    includes(localModule, databaseModule, networkModule, repoModule)
+    includes(localModule, databaseModule, networkModule, repoModule, viewModelModule)
 }
