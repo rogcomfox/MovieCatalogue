@@ -1,14 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".presentation.ui.fragment.movie.MoviesFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.smarteist.autoimageslider.SliderView
+                android:id="@+id/img_list_popular_movies"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintDimensionRatio="H,2:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:sliderAnimationDuration="600"
+                app:sliderAutoCycleDirection="back_and_forth"
+                app:sliderAutoCycleEnabled="true"
+                app:sliderIndicatorAnimationDuration="600"
+                app:sliderIndicatorGravity="center_horizontal|bottom"
+                app:sliderScrollTimeInSec="1"
+                app:sliderStartAutoCycle="true" />
+
+            <TextView
+                android:id="@+id/tv_title_now_playing_movies"
+                style="@style/BodyLarge_Bold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="10dp"
+                android:text="@string/tv_title_now_playing_movies"
+                android:textColor="@color/grey_900"
+                app:layout_constraintEnd_toStartOf="@id/tv_see_all_now_playing"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img_list_popular_movies" />
+
+            <TextView
+                android:id="@+id/tv_see_all_now_playing"
+                style="@style/Body_Med"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:text="@string/tv_direction_see_all"
+                android:textColor="@color/grey_100"
+                app:layout_constraintBottom_toBottomOf="@id/tv_title_now_playing_movies"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_title_now_playing_movies" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_now_playing_movies"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_now_playing_movies" />
+
+            <TextView
+                android:id="@+id/tv_title_popular_movies"
+                style="@style/BodyLarge_Bold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="10dp"
+                android:text="@string/tv_title_popular_movies"
+                android:textColor="@color/grey_900"
+                app:layout_constraintEnd_toStartOf="@id/tv_see_all_popular_movies"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rv_now_playing_movies" />
+
+            <TextView
+                android:id="@+id/tv_see_all_popular_movies"
+                style="@style/Body_Med"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:text="@string/tv_direction_see_all"
+                android:textColor="@color/grey_100"
+                app:layout_constraintBottom_toBottomOf="@id/tv_title_popular_movies"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_title_popular_movies" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_popular_movies"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_popular_movies" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_fav_movies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="40dp"
+        android:contentDescription="@string/btn_fav_movie"
+        android:src="@drawable/ic_fav_movie"
+        app:tint="@color/grey_10" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
