@@ -16,6 +16,6 @@
     <string name="btn_fav_movie">Film Favorit</string>
     <string name="btn_fav_series">Serial Favorit</string>
     <string name="tv_title_change_lang">Ganti Bahasa</string>
-    <string name="tv_app_info">Aplikasi %1$s Dengan Versi %1$s</string>
-    <string name="tv_developer">Dibuat dengan \\u2764 oleh Rogcomfox</string>
+    <string name="tv_app_info">Aplikasi %1$s Dengan Versi %2$s</string>
+    <string name="tv_developer">Dibuat dengan &#10084;&#65039; oleh Rogcomfox</string>
 </resources>

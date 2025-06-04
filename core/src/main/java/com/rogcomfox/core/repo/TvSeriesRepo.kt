@@ -4,6 +4,7 @@ import com.rogcomfox.core.safeApiCall
 import com.rogcomfox.core.source.Resource
 import com.rogcomfox.core.source.local.entity.TvSeriesDetailEntity
 import com.rogcomfox.core.source.remote.network.ApiService
+import com.rogcomfox.core.source.remote.response.TrendingDataResponse
 import com.rogcomfox.core.source.remote.response.TvSeriesListResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -41,6 +42,13 @@ class TvSeriesRepo(private val apiService: ApiService) : TvSeriesDataSource {
         flow {
             emit(safeApiCall {
                 apiService.searchTvSeries(seriesQuery, isAdultToo, seriesPage, seriesYear)
+            })
+        }.flowOn(Dispatchers.IO)
+
+    override suspend fun trendingTvSeries(): Flow<Resource<TrendingDataResponse>> =
+        flow {
+            emit(safeApiCall {
+                apiService.getTrendingSeries()
             })
         }.flowOn(Dispatchers.IO)
 

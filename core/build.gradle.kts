@@ -23,7 +23,6 @@ android {
         properties.load(project.rootProject.file("local.properties").inputStream())
         buildConfigField("String", "TMDB_TOKEN_ID", properties.getProperty("TMDB_TOKEN_ID"))
         buildConfigField("String", "MAIN_BASE_URL", properties.getProperty("MAIN_BASE_URL"))
-        buildConfigField("String", "IMAGE_BASE_URL", properties.getProperty("IMAGE_BASE_URL"))
     }
 
     buildTypes {

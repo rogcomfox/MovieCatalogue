@@ -8,6 +8,7 @@ import com.rogcomfox.core.source.Resource
 import com.rogcomfox.core.source.local.entity.MovieDetailEntity
 import com.rogcomfox.core.source.remote.response.MovieResponseWithDate
 import com.rogcomfox.core.source.remote.response.MovieResponseWithoutDate
+import com.rogcomfox.core.source.remote.response.TrendingDataResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -23,6 +24,9 @@ class MovieViewModel(private val movieRepo: MoviesRepo) : ViewModel() {
 
     private val searchMoviesLiveData = MutableLiveData<Resource<MovieResponseWithoutDate>>()
     val searchMoviesStatus = searchMoviesLiveData
+
+    private val getTrendingMoviesLiveData = MutableLiveData<Resource<TrendingDataResponse>>()
+    val getTrendingMoviesStatus = getTrendingMoviesLiveData
 
     fun getNowPlayingMovies(page: Int) {
         getNowPlayingMoviesStatus.postValue(Resource.Loading())
@@ -56,6 +60,15 @@ class MovieViewModel(private val movieRepo: MoviesRepo) : ViewModel() {
         viewModelScope.launch(Dispatchers.IO) {
             movieRepo.searchMovies(movieQuery, isAdultToo, moviePage, movieYear).collect { values ->
                 searchMoviesStatus.postValue(values)
+            }
+        }
+    }
+
+    fun getTrendingMovies() {
+        getTrendingMoviesStatus.postValue(Resource.Loading())
+        viewModelScope.launch(Dispatchers.IO) {
+            movieRepo.trendingMovies().collect { values ->
+                getTrendingMoviesStatus.postValue(values)
             }
         }
     }

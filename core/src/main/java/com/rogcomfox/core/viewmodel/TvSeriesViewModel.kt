@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.rogcomfox.core.repo.TvSeriesRepo
 import com.rogcomfox.core.source.Resource
 import com.rogcomfox.core.source.local.entity.TvSeriesDetailEntity
+import com.rogcomfox.core.source.remote.response.TrendingDataResponse
 import com.rogcomfox.core.source.remote.response.TvSeriesListResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -22,6 +23,9 @@ class TvSeriesViewModel(private val tvSeriesRepo: TvSeriesRepo) : ViewModel() {
 
     private val searchSeriesLiveData = MutableLiveData<Resource<TvSeriesListResponse>>()
     val searchSeriesStatus = searchSeriesLiveData
+
+    private val getTrendingSeriesLiveData = MutableLiveData<Resource<TrendingDataResponse>>()
+    val getTrendingSeriesStatus = getTrendingSeriesLiveData
 
     fun getAiringTodayTvSeries(page: Int) {
         getAiringTodaySeriesStatus.postValue(Resource.Loading())
@@ -57,6 +61,15 @@ class TvSeriesViewModel(private val tvSeriesRepo: TvSeriesRepo) : ViewModel() {
                 .collect { values ->
                     searchSeriesStatus.postValue(values)
                 }
+        }
+    }
+
+    fun getTrendingSeries() {
+        getTrendingSeriesStatus.postValue(Resource.Loading())
+        viewModelScope.launch(Dispatchers.IO) {
+            tvSeriesRepo.trendingTvSeries().collect { values ->
+                getTrendingSeriesStatus.postValue(values)
+            }
         }
     }
 }

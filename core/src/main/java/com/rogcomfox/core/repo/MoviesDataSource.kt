@@ -4,6 +4,7 @@ import com.rogcomfox.core.source.Resource
 import com.rogcomfox.core.source.local.entity.MovieDetailEntity
 import com.rogcomfox.core.source.remote.response.MovieResponseWithDate
 import com.rogcomfox.core.source.remote.response.MovieResponseWithoutDate
+import com.rogcomfox.core.source.remote.response.TrendingDataResponse
 import kotlinx.coroutines.flow.Flow
 
 interface MoviesDataSource {
@@ -16,4 +17,5 @@ interface MoviesDataSource {
         moviePage: Int,
         movieYear: String
     ): Flow<Resource<MovieResponseWithoutDate>>
+    suspend fun trendingMovies(): Flow<Resource<TrendingDataResponse>>
 }

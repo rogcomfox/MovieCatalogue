@@ -15,7 +15,7 @@
             android:layout_height="match_parent">
 
             <com.smarteist.autoimageslider.SliderView
-                android:id="@+id/img_list_popular_movies"
+                android:id="@+id/img_list_trending_movies"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintDimensionRatio="H,2:1"
@@ -27,7 +27,7 @@
                 app:sliderAutoCycleEnabled="true"
                 app:sliderIndicatorAnimationDuration="600"
                 app:sliderIndicatorGravity="center_horizontal|bottom"
-                app:sliderScrollTimeInSec="1"
+                app:sliderScrollTimeInSec="2"
                 app:sliderStartAutoCycle="true" />
 
             <TextView
@@ -42,11 +42,11 @@
                 android:textColor="@color/grey_900"
                 app:layout_constraintEnd_toStartOf="@id/tv_see_all_now_playing"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/img_list_popular_movies" />
+                app:layout_constraintTop_toBottomOf="@id/img_list_trending_movies" />
 
             <TextView
                 android:id="@+id/tv_see_all_now_playing"
-                style="@style/Body_Med"
+                style="@style/BodySmall_Med"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
@@ -81,7 +81,7 @@
 
             <TextView
                 android:id="@+id/tv_see_all_popular_movies"
-                style="@style/Body_Med"
+                style="@style/BodySmall_Med"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"

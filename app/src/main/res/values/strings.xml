@@ -19,6 +19,6 @@
     <string name="tv_title_change_lang">Change Language</string>
     <string name="tv_title_indonesia" translatable="false">Indonesia</string>
     <string name="tv_title_english" translatable="false">English</string>
-    <string name="tv_app_info">%1$s App With Version %1$s</string>
-    <string name="tv_developer">Made with \\u2764 by Rogcomfox</string>
+    <string name="tv_app_info">%1$s App With Version %2$s</string>
+    <string name="tv_developer">Made with &#10084;&#65039; by Rogcomfox</string>
 </resources>

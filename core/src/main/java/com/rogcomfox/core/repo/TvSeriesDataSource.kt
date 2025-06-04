@@ -2,6 +2,7 @@ package com.rogcomfox.core.repo
 
 import com.rogcomfox.core.source.Resource
 import com.rogcomfox.core.source.local.entity.TvSeriesDetailEntity
+import com.rogcomfox.core.source.remote.response.TrendingDataResponse
 import com.rogcomfox.core.source.remote.response.TvSeriesListResponse
 import kotlinx.coroutines.flow.Flow
 
@@ -15,4 +16,5 @@ interface TvSeriesDataSource {
         seriesPage: Int,
         seriesYear: Int
     ): Flow<Resource<TvSeriesListResponse>>
+    suspend fun trendingTvSeries(): Flow<Resource<TrendingDataResponse>>
 }

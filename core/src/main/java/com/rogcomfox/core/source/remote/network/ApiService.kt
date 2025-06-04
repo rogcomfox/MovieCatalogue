@@ -4,6 +4,7 @@ import com.rogcomfox.core.source.local.entity.MovieDetailEntity
 import com.rogcomfox.core.source.local.entity.TvSeriesDetailEntity
 import com.rogcomfox.core.source.remote.response.MovieResponseWithDate
 import com.rogcomfox.core.source.remote.response.MovieResponseWithoutDate
+import com.rogcomfox.core.source.remote.response.TrendingDataResponse
 import com.rogcomfox.core.source.remote.response.TvSeriesListResponse
 import retrofit2.Response
 import retrofit2.http.GET
@@ -52,6 +53,13 @@ interface ApiService {
         @Query("year") movieYear: String
     ): Response<MovieResponseWithoutDate>
 
+    @Headers(
+        "isAuthorize: true",
+        "Accept: application/json"
+    )
+    @GET(Routing.TRENDING_WEEKLY_MOVIES_URL)
+    suspend fun getTrendingMovies(): Response<TrendingDataResponse>
+
 
     // TV Series API
     @Headers(
@@ -92,4 +100,11 @@ interface ApiService {
         @Query("page") seriesPage: Int,
         @Query("year") seriesYear: Int
     ): Response<TvSeriesListResponse>
+
+    @Headers(
+        "isAuthorize: true",
+        "Accept: application/json"
+    )
+    @GET(Routing.TRENDING_WEEKLY_SERIES_URL)
+    suspend fun getTrendingSeries(): Response<TrendingDataResponse>
 }
